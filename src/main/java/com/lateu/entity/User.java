@@ -2,8 +2,13 @@ package com.lateu.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.lateu.security.AppRole;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -24,21 +29,18 @@ public class User {
 	@Column(length = 20, nullable = false)
 	private String lastName;
 	
+	private Boolean enabled=false;
+	
+	private Boolean locked=false;
+	@Enumerated(EnumType.STRING)
+	private AppRole appRole;
+	
 
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public User(Long id, String username, String email, String password, String firstName, String lastName) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
 
 
 	public Long getId() {
@@ -98,6 +100,36 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+
+	public Boolean getLocked() {
+		return locked;
+	}
+
+
+	public void setLocked(Boolean locked) {
+		this.locked = locked;
+	}
+
+
+	public AppRole getAppRole() {
+		return appRole;
+	}
+
+
+	public void setAppRole(AppRole appRole) {
+		this.appRole = appRole;
 	}
 
 

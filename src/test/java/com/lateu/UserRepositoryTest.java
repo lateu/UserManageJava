@@ -35,7 +35,7 @@ public class UserRepositoryTest {
 	
 	@Test
 	public void createUserTest() {
-		/*BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
+		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
 		User u=new User();
 		u.setUsername("rlateu");
 		u.setEmail("rlateu@gmail.com");
@@ -44,16 +44,16 @@ public class UserRepositoryTest {
 		u.setPassword(encoder.encode("123"));
 		userRepository.save(u);
 		User inserted=entityManager.find(User.class, u.getId());
-		assertThat(inserted.getUsername()).isEqualTo("rlateu");*/
+		assertThat(inserted.getUsername()).isEqualTo("rlateu");
 	}
 	
 	@Test
 	public void findUserByEmailTest() {
-		String email="rlateu@dgdb.com";
+		String email="rlateu@gmail.com";
 		
-	User u=	userRepository.findUserByEmail(email);
+	/*User u=	userRepository.findUserByEmail(email);
 	
-	assertThat(u).isNotNull();
+	assertThat(u).isNotNull();*/
 		
 		
 	}
